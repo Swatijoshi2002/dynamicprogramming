@@ -1,13 +1,16 @@
 #include<bits/stdc++.h>
 #include<string>
 using namespace std;
+vector<string> v;
+map<string,int> s;
 bool ispalin(string s,int i,int j)
 {
     while(i<=j)
     {
         if(s[i]!=s[j])
         return false;
-        else{
+        else
+        {
             i++;
             j--;
         }
@@ -19,7 +22,9 @@ int solve(string s,int i,int j)
     if(i>=j)
     return 0;
     if(ispalin(s,i,j))
+    {
     return 0;
+    }
     int min=INT_MAX;
     for(int k=i;k<=j-1;k++)
     {
@@ -33,8 +38,9 @@ int solve(string s,int i,int j)
 }
 int main()
 {
-    sring s;
+    string s;
     cin>>s;
     int n=s.length();
     int res=solve(s,0,n);
+    cout<<res;
 }
