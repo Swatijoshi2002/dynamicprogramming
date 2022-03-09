@@ -73,3 +73,54 @@ int main()
         cout<<v[i]<<" ";
     }
 }
+/*
+#include<bits/stdc++.h>
+using namespace std;
+bool ispalin(string s,int i,int j)
+{
+    while(i<j)
+    {
+        if(s[i]!=s[j])
+        return false;
+    }
+    return true;
+}
+void solve_2(vector<vector<string>>&v,vector<string>& v1,string s,int start,int end)
+{
+    if(start>=end)
+    {
+        v.push_back(v1);
+        return ;
+    }
+    for(int i=start;i<end;i++)
+    {
+        if(ispalin(s,start,i))
+        {
+        v1.push_back(s.substr(start,i-start+1));
+        solve_2(v,v1,s,i+1,end);
+        v1.pop_back();
+        }
+    }
+}
+void solve(string s,int start,int end)
+{
+    vector<vector<string>> v;
+    vector<string> v1;
+    solve_2(v,v1,s,start,end);
+     for(int i=0;i<v.size();i++)
+    {
+        for(int j=0;j<v[i].size();j++)
+        {
+            cout<<v[i][j]<<" ";
+        }
+    }
+}
+int main()
+{
+    string s;
+    cin>>s;
+    int n=s.length();
+    solve(s,0,n);
+}
+
+    */
