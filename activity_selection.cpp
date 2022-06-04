@@ -1,5 +1,4 @@
 
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -24,13 +23,14 @@ void activity_selection(vector<int>& start,vector<int>& finish,int n)
     }*/
     //activity selection
     res.push_back(0);
-    
+    int j=v[0].second;
     for(int i=1;i<n;i++)
     {
-        int j=res[res.size()-1];
-        if(v[i].first>v[j].second)
+        
+        if(v[i].first>j)
         {
             res.push_back(i);
+            j=v[i].second;
          
         }
     }
